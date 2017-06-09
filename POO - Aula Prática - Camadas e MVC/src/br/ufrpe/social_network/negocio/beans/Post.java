@@ -56,6 +56,15 @@ public class Post {
     }
     
     public void removeComment(Long id) {
+    	int i = 0;
+    	for (i = 0; i < comments.size(); i++)
+    	{
+    		if(comments(i) == id)
+    		{
+    			
+    			
+    		}
+    	}
         // TODO remover comentário da lista de comentários se ele existir. 
         // Você deve varrer a lista inteira verificando se há algum 
         // comentário com o ID informado como parâmetro e então removê-lo
