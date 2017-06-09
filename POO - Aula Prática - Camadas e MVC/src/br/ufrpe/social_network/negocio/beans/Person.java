@@ -1,4 +1,4 @@
-package br.ufrpe.social_network.negocio.beans;
+ package br.ufrpe.social_network.negocio.beans;
 
 import java.time.LocalDate;
 
@@ -76,7 +76,28 @@ public class Person {
     
     @Override
     public String toString() {
-        // TODO Implementar método toString da classe Person
-        return "Coloque sua implementação aqui";
+    	String texto = "";
+    	texto += "Name: " + this.name +"\n";
+    	texto += "Country: " + this.country +"\n";
+    	texto += "Birth date: " + this.birthDate;
+    
+    	return texto;
+      
     }
+    
+    public boolean equals(Person p){
+    	boolean r = false;
+    	
+    	if(p != null)
+    	{
+    		if(this.name.equals(p.getName()) && this.birthDate.equals(p.getBirthDate()) && this.country.equals(p.getCountry()))
+    		{
+    			r = true;
+    		}
+    	}
+    	
+    	return r;
+    }
+    
+    
 }

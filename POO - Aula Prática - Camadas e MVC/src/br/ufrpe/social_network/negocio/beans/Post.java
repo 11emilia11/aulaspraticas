@@ -4,13 +4,15 @@ import java.util.ArrayList;
 
 public class Post {
     
-    private long id;
+	private static long nextId = 1;
+    private long id = 1;
     private String texto;
     private Person author;
     private ArrayList<Post> comments;
 
     public Post(String texto, Person author) {
-        // TODO Implementar a mesma estratégia da classe Person para geração de ID  
+        this.id = nextId;
+        nextId++;
         
         this.texto = texto;
         this.author = author;
@@ -20,6 +22,30 @@ public class Post {
     public Post() {
         this(null, null);
     }
+    
+    public String getTexto(){
+    	return texto;
+    }
+    
+    public void setTexto(String texto){
+    	this.texto = texto;
+    }
+    
+    public Person getAuthor(){
+    	return author;
+    }
+    
+    public void setAuthor(Person author){
+    	this.author = author;
+    }
+    public ArrayList<Post> getComments(){
+    	return comments;
+    }
+    
+    public long getId(){
+    	return id;
+    }
+
 
     // TODO gerar todos os métodos get/set, exceto o setId
     
@@ -37,7 +63,21 @@ public class Post {
     
     @Override
     public String toString() {
-        // TODO Implementar método toString da classe Person
-        return "Coloque sua implementação aqui";
+    	String texto = "";
+    	
+    	texto += "Author : \n";
+    	texto += this.getAuthor();
+    	texto += "Post : \n ";
+    	texto += this.texto;
+    	
+    	if(this.comments != null)
+    	{
+    		texto +="	Comments : \n";
+    		texto += this.getComments();
+    	}
+  
+    	return texto;
     }
+    
+
 }
